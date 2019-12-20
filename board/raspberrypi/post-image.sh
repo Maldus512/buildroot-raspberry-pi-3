@@ -51,6 +51,9 @@ done
 
 rm -rf "${GENIMAGE_TMP}"
 
+dd if=/dev/zero of=${BINARIES_DIR}/log.ext4 bs=1M count=100
+mke2fs ${BINARIES_DIR}/log.ext4
+
 genimage                           \
 	--rootpath "${TARGET_DIR}"     \
 	--tmppath "${GENIMAGE_TMP}"    \
