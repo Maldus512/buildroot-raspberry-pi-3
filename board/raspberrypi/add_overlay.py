@@ -9,5 +9,7 @@ copyfile("{}/{}".format(sys.argv[1], ft5406), "{}/rpi-firmware/overlays/{}".form
 with open(cmdline, 'r+') as f:
     content = f.readline().strip('\n')
     if not "quiet splash vt.global_cursor_default=0" in content:
-        f.truncate(0)
-        f.write(content + " quiet splash vt.global_cursor_default=0")
+        content = content + " quiet splash vt.global_cursor_default=0"
+    f.seek(0)
+    f.truncate()
+    f.write(content)
