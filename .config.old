@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Buildroot 2019.11-git-01046-g22a24ba08d-dirty Configuration
+# Buildroot 2019.11-git-01047-gdb5a585ec2-dirty Configuration
 #
 BR2_HAVE_DOT_CONFIG=y
 BR2_HOST_GCC_AT_LEAST_4_5=y
@@ -440,7 +440,7 @@ BR2_ENABLE_LOCALE_WHITELIST="C en_US"
 # BR2_TARGET_TZ_INFO is not set
 BR2_ROOTFS_USERS_TABLES=""
 BR2_ROOTFS_OVERLAY="board/raspberrypi3-64/rootfs_overlay"
-BR2_ROOTFS_POST_BUILD_SCRIPT="board/raspberrypi3-64/post-build.sh board/raspberrypi3-64/test.py"
+BR2_ROOTFS_POST_BUILD_SCRIPT="board/raspberrypi3-64/post-build.sh board/raspberrypi3-64/fill_env_variables.py"
 BR2_ROOTFS_POST_FAKEROOT_SCRIPT=""
 BR2_ROOTFS_POST_IMAGE_SCRIPT="board/raspberrypi3-64/add_overlay.py board/raspberrypi3-64/post-image.sh"
 BR2_ROOTFS_POST_SCRIPT_ARGS="--aarch64"
@@ -464,7 +464,7 @@ BR2_LINUX_KERNEL_USE_DEFCONFIG=y
 # BR2_LINUX_KERNEL_USE_CUSTOM_CONFIG is not set
 BR2_LINUX_KERNEL_DEFCONFIG="bcmrpi3"
 BR2_LINUX_KERNEL_CONFIG_FRAGMENT_FILES=""
-BR2_LINUX_KERNEL_CUSTOM_LOGO_PATH="elford2.png"
+BR2_LINUX_KERNEL_CUSTOM_LOGO_PATH="logo.png"
 BR2_LINUX_KERNEL_IMAGE=y
 # BR2_LINUX_KERNEL_VMLINUX is not set
 # BR2_LINUX_KERNEL_IMAGE_TARGET_CUSTOM is not set
@@ -475,7 +475,7 @@ BR2_LINUX_KERNEL_GZIP=y
 # BR2_LINUX_KERNEL_XZ is not set
 BR2_LINUX_KERNEL_DTS_SUPPORT=y
 # BR2_LINUX_KERNEL_DTB_IS_SELF_BUILT is not set
-BR2_LINUX_KERNEL_INTREE_DTS_NAME="broadcom/bcm2710-rpi-3-b broadcom/bcm2710-rpi-3-b-plus broadcom/bcm2837-rpi-3-b overlays/rpi-ft5406-overlay"
+BR2_LINUX_KERNEL_INTREE_DTS_NAME="broadcom/bcm2710-rpi-3-b broadcom/bcm2710-rpi-3-b-plus broadcom/bcm2837-rpi-3-b overlays/rpi-ft5406-overlay overlays/pi3-miniuart-bt-overlay"
 BR2_LINUX_KERNEL_CUSTOM_DTS_PATH=""
 BR2_LINUX_KERNEL_DTB_OVERLAY_SUPPORT=y
 # BR2_LINUX_KERNEL_INSTALL_TARGET is not set

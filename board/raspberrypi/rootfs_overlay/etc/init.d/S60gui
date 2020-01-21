@@ -6,7 +6,7 @@
 case "$1" in
   start)
 	printf "Loading Application"
-        /root/elford </dev/null &>/tmp/stdout.txt &
+        /root/app </dev/null &>/tmp/stdout.txt &
 	;;
   stop)
 	printf "Nothing to do"
