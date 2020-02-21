@@ -16,8 +16,9 @@ with open(cmdline, 'r+') as f:
     if remove in content:
         content = content.replace(remove, '')
 
-    if not "quiet splash vt.global_cursor_default=0" in content:
-        content = content + " quiet splash vt.global_cursor_default=0"
+    correction = "quiet splash loglevel=0 console=tty3 vt.global_cursor_default=0"
+    if not correction in content:
+        content = content + " " + correction
     f.seek(0)
     f.truncate()
     f.write(content)
@@ -25,6 +26,9 @@ with open(cmdline, 'r+') as f:
 with open(config, 'r+') as f:
     content = f.readlines()
     dtoverlay = 'dtoverlay=pi3-miniuart-bt\n'
+    nosplash = 'disable_splash=1\n'
 
     if not dtoverlay in content:
         f.write(dtoverlay)
+    if not nosplash in content:
+        f.write(nosplash)
