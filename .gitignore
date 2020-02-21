@@ -1,4 +1,6 @@
+board/raspberrypi/rootfs_overlay/root/*
 environment.sh
+..config.tmp
 /output
 /dl
 /.auto.deps

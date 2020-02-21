@@ -2662,7 +2662,7 @@ endif
 ifneq "$(HOSTARCH)" "x86_64"
 /home/maldus/Projects/buildrpi/output/build/buildroot-config/auto.conf: FORCE
 endif
-ifneq "$(BR2_VERSION_FULL)" "2019.11-git-01047-gdb5a585ec2-dirty"
+ifneq "$(BR2_VERSION_FULL)" "2019.11-git-01048-g8e07d30213-dirty"
 /home/maldus/Projects/buildrpi/output/build/buildroot-config/auto.conf: FORCE
 endif
 

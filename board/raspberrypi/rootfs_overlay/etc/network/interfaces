@@ -7,4 +7,6 @@ iface wlan0 inet dhcp
     post-down killall -q wpa_supplicant
     wait-delay 15
 
+iface eth0 inet dhcp
+
 iface default inet dhcp
