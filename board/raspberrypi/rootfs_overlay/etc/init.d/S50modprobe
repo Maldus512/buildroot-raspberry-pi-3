@@ -8,6 +8,8 @@ case "$1" in
 	printf "Loading optional kernel modules"
         /sbin/modprobe rpi-ft5406
         /sbin/modprobe evdev
+        /sbin/modprobe i2c-dev
+        /sbin/modprobe i2c_bcm2835
 	;;
   stop)
 	printf "Unloading modules"

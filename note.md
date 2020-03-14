@@ -1,2 +1,1 @@
-E' necessario mettere a mano i device tree nell'overlay della partizione di boot
-Fai tutti i passaggi tramite post build script e post image script
+Aggiungere la configurazione per dropbear ed eliminare l'accesso tramite password in ssh (si setta la variabile DROPBEAR_ARGS nel file /etc/default/dropbear con i flag da passare al demone; -s : disallow password logins)

@@ -1,4 +1,5 @@
 board/raspberrypi/rootfs_overlay/root/*
+.config*
 environment.sh
 ..config.tmp
 /output

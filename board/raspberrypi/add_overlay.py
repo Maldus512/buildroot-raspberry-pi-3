@@ -11,10 +11,11 @@ copyfile("{}/{}".format(sys.argv[1], ttyama0), "{}/rpi-firmware/overlays/{}".for
 
 with open(cmdline, 'r+') as f:
     content = f.readline().strip('\n')
-    remove = "console=ttyAMA0,115200"
+    rs = ["console=ttyAMA0,115200", "console=tty1"]
 
-    if remove in content:
-        content = content.replace(remove, '')
+    for remove in rs:
+        if remove in content:
+            content = content.replace(remove, '')
 
     correction = "quiet splash loglevel=0 console=tty3 vt.global_cursor_default=0"
     if not correction in content:
@@ -27,8 +28,11 @@ with open(config, 'r+') as f:
     content = f.readlines()
     dtoverlay = 'dtoverlay=pi3-miniuart-bt\n'
     nosplash = 'disable_splash=1\n'
+    dtparam = 'dtparam=i2c_arm=on\n'
 
     if not dtoverlay in content:
         f.write(dtoverlay)
     if not nosplash in content:
         f.write(nosplash)
+    if not dtparam in content:
+        f.write(dtparam)
