@@ -51,7 +51,7 @@ done
 
 rm -rf "${GENIMAGE_TMP}"
 
-dd if=/dev/zero of=${BINARIES_DIR}/data.ext4 bs=1M count=100
+dd if=/dev/zero of=${BINARIES_DIR}/data.ext4 bs=1M count=10
 mke2fs ${BINARIES_DIR}/data.ext4
 
 genimage                           \

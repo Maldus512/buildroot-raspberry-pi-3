@@ -6,7 +6,10 @@
 case "$1" in
   start)
 	printf "Loading Application"
-        /root/app </dev/null &>/tmp/stdout.txt &
+        mkdir /tmp/cores -p
+        echo "/tmp/cores/core.%e.%p.%h.%t" > /proc/sys/kernel/core_pattern
+        ulimit -c unlimited
+        sh /root/respawn.sh </dev/null &>/tmp/stdout.txt &
 	;;
   stop)
 	printf "Nothing to do"
