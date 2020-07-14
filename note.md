@@ -1,1 +1,0 @@
-Aggiungere la configurazione per dropbear ed eliminare l'accesso tramite password in ssh (si setta la variabile DROPBEAR_ARGS nel file /etc/default/dropbear con i flag da passare al demone; -s : disallow password logins)

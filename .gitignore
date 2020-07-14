@@ -1,4 +1,4 @@
-board/raspberrypi/rootfs_overlay/root/*
+board/raspberrypi/rootfs_overlay/root/app
 .config*
 environment.sh
 ..config.tmp
