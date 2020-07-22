@@ -27,19 +27,32 @@ if [ -f "/root/newapp" ]; then
     cp /root/newapp /tmp/newapp
     mount -o remount,rw /dev/mmcblk0p2 /
     rm /root/newapp
-    touch /root/update
     mount -o remount,ro /dev/mmcblk0p2 /
     chmod u+x /tmp/newapp
-    /tmp/newapp
+
+    # Indica la destinazione dell'aggiornamento con il flag -i
+    /tmp/newapp -u /root/app
 fi
 
-ulimit -c unlimited
-until /root/app; do
-    sleep 4
+save_reports() {
     echo "`date`: L'applicazione e' terminata inaspettatamente" >> /tmp/WS2020_log.txt
 
     mount -o remount,rw /dev/mmcblk0p3 /mnt/data
     mkdir -p /mnt/data/oldreports
-    tar -czf /mnt/data/oldreports/"`date %S_%M_%H-%d_%m_%Y`.tar.gz" /tmp/WS2020_log.txt /tmp/cores
+    tar -cf - -C /tmp/ WS2020_log.txt cores | gzip > /mnt/data/oldreports/"`date +%H_%M_%S-%d_%m_%Y`.tar.gz"
+    rm /tmp/cores/*
     mount -o remount,ro /dev/mmcblk0p3 /mnt/data
+}
+
+ulimit -c unlimited
+
+# first execution, without signaling problems
+/root/app
+save_reports
+sleep 2
+
+# -c flag signals a crash
+until /root/app -c; do
+    save_reports
+    sleep 2
 done;
