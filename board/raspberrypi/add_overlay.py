@@ -37,11 +37,8 @@ with open(config, 'r+') as f:
     nosplash = 'disable_splash=1\n'
     dtparam = 'dtparam=i2c_arm=on\n'
 
-    if not uartoverlay in content:
-        f.write(uartoverlay)
-    if not nosplash in content:
-        f.write(nosplash)
-    if not dtparam in content:
-        f.write(dtparam)
-    if not rtcoverlay in content:
-        f.write(rtcoverlay)
+    options = [uartoverlay, rtcoverlay, nosplash, dtparam, 'max_framebuffers=2\n', 'display_default_lcd=1\n', 'hdmi_force_hotplug=1\n']
+
+    for option in options:
+        if not option in content:
+            f.write(option)
