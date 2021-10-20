@@ -7,7 +7,6 @@ environment.sh
 /.auto.deps
 *.depend
 *.o
-/*.patch
 /*.diff
 *.orig
 *.rej

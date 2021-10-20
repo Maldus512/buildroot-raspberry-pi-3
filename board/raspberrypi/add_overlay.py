@@ -37,7 +37,7 @@ with open(config, 'r+') as f:
     nosplash = 'disable_splash=1\n'
     dtparam = 'dtparam=i2c_arm=on\n'
 
-    options = [uartoverlay, rtcoverlay, nosplash, dtparam, 'max_framebuffers=2\n', 'display_default_lcd=1\n', 'hdmi_force_hotplug=1\n']
+    options = [uartoverlay, rtcoverlay, nosplash, dtparam, 'boot_delay=0\n', 'max_framebuffers=2\n', 'display_default_lcd=1\n', 'hdmi_force_hotplug=1\n']
 
     for option in options:
         if not option in content:

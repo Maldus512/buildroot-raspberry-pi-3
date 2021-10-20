@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Buildroot 2019.11-git-01055-g7f5d7f66e5-dirty Configuration
+# Buildroot 2019.11-git-01057-g956855f13b-dirty Configuration
 #
 BR2_HAVE_DOT_CONFIG=y
 BR2_HOST_GCC_AT_LEAST_4_5=y
@@ -475,7 +475,7 @@ BR2_LINUX_KERNEL_GZIP=y
 # BR2_LINUX_KERNEL_XZ is not set
 BR2_LINUX_KERNEL_DTS_SUPPORT=y
 # BR2_LINUX_KERNEL_DTB_IS_SELF_BUILT is not set
-BR2_LINUX_KERNEL_INTREE_DTS_NAME="broadcom/bcm2710-rpi-3-b broadcom/bcm2710-rpi-3-b-plus broadcom/bcm2837-rpi-3-b overlays/rpi-ft5406-overlay overlays/pi3-miniuart-bt-overlay overlays/i2c-rtc-overlay overlays/i2c-rtc-gpio-overlay"
+BR2_LINUX_KERNEL_INTREE_DTS_NAME="broadcom/bcm2710-rpi-3-b broadcom/bcm2710-rpi-3-b-plus broadcom/bcm2837-rpi-3-b overlays/rpi-ft5406-overlay overlays/pi3-miniuart-bt-overlay overlays/i2c-rtc-overlay overlays/i2c-rtc-gpio-overlay overlays/i2c-gpio-overlay"
 BR2_LINUX_KERNEL_CUSTOM_DTS_PATH=""
 BR2_LINUX_KERNEL_DTB_OVERLAY_SUPPORT=y
 # BR2_LINUX_KERNEL_INSTALL_TARGET is not set

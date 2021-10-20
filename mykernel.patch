@@ -1,0 +1,24 @@
+diff -ruN a/drivers/rtc/rtc-pcf8523.c b/drivers/rtc/rtc-pcf8523.c
+--- a/drivers/rtc/rtc-pcf8523.c	2019-08-15 12:18:00.000000000 +0200
++++ b/drivers/rtc/rtc-pcf8523.c	2020-07-22 14:33:06.543554854 +0200
+@@ -370,7 +370,7 @@
+ 	if (err < 0)
+ 		return err;
+ 
+-	err = pcf8523_set_pm(client, 0);
++	err = pcf8523_set_pm(client, 0x20);
+ 	if (err < 0)
+ 		return err;
+ 
+diff -ruN a/scripts/dtc/dtc-lexer.l b/scripts/dtc/dtc-lexer.l
+--- a/scripts/dtc/dtc-lexer.l	2019-08-15 12:18:00.000000000 +0200
++++ b/scripts/dtc/dtc-lexer.l	2020-07-22 14:31:49.332791777 +0200
+@@ -38,7 +38,7 @@
+ #include "srcpos.h"
+ #include "dtc-parser.tab.h"
+ 
+-YYLTYPE yylloc;
++//YYLTYPE yylloc;
+ extern bool treesource_error;
+ 
+ /* CAUTION: this will stop working if we ever use yyless() or yyunput() */
